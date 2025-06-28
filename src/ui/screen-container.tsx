@@ -24,6 +24,7 @@ const ScreenContainer = (props: IScreenContainer) => {
         <ScrollView
           showsVerticalScrollIndicator={false}
           alwaysBounceVertical={false}
+          contentContainerStyle={styles.contentContainerStyle}
         >
           <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <YStack f={1} w={'100%'} px="$lg">
@@ -44,4 +45,5 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
   },
+  contentContainerStyle: { flexGrow: 1 },
 });
