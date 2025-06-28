@@ -5,7 +5,7 @@ import * as Animatable from 'react-native-animatable';
 import { s, vs } from 'react-native-size-matters';
 
 import { ITextInput } from '@/types';
-import { COLORS, ShadowStyle, Text } from '@/ui';
+import { COLORS, Text } from '@/ui';
 
 const TextInput = React.forwardRef(
   (props?: ITextInput, ref?: Ref<RNTextInput>) => {
@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
     fontSize: s(14),
     height: vs(35),
     borderRadius: s(6),
-    ...ShadowStyle,
   },
   errorTextInputStyle: { borderColor: COLORS.Error, borderWidth: 1 },
   titleStyle: { fontWeight: 'bold', marginBottom: vs(8) },

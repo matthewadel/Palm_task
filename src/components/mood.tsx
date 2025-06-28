@@ -7,7 +7,9 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import { s } from 'react-native-size-matters';
-import { Button, styled, Text, XStack, YStack } from 'tamagui';
+import { styled, Text, XStack, YStack } from 'tamagui';
+
+import { Button } from '@/ui';
 
 const moods = [
   {
@@ -35,16 +37,14 @@ const MoodButton = styled(Button, {
   borderRightWidth: 2,
   borderBottomWidth: 2,
   borderLeftWidth: 2,
-
+  bc: '$Primary',
   variants: {
     selected: {
       true: {
         bg: '$Primary',
-        borderColor: '$Primary',
       },
       false: {
         bg: '$White',
-        borderColor: '$BorderColor',
       },
     },
   } as const,

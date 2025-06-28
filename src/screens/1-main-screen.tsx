@@ -1,9 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { StyleSheet } from 'react-native';
-import { Button, YStack } from 'tamagui';
+import { YStack } from 'tamagui';
 
 import { Mood, Notes, SleepHours } from '@/components';
-import { ScreenContainer } from '@/ui';
+import { Button, ScreenContainer } from '@/ui';
 import SuccessMessage, { SuccessMessageRef } from '@/ui/success-message';
 
 export const MainScreen = () => {
@@ -27,16 +26,12 @@ export const MainScreen = () => {
         <SleepHours value={sleep} onChange={setSleep} />
         <Notes value={notes} onChange={setNotes} />
         <Button
+          type="PRIMARY"
           mt="$xl"
           w="100%"
           height={55}
-          bg="$Primary"
-          color="#fff"
-          br={10}
           onPress={handleSubmit}
-          fontWeight={'700'}
-          disabled={true}
-          disabledStyle={styles.disableButtonStyle}
+          disabled={!notes}
         >
           Submit
         </Button>
@@ -49,7 +44,3 @@ export const MainScreen = () => {
     </ScreenContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  disableButtonStyle: { opacity: 0.5 },
-});

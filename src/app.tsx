@@ -6,7 +6,7 @@ import { TamaguiProvider } from 'tamagui';
 
 import { MainStack } from '@/navigation/main-stack';
 
-import { config } from './tamagui.config';
+import { config } from './ui/tamagui.config';
 
 const App = () => {
   return (

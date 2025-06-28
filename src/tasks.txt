@@ -1,5 +1,6 @@
-draw the components
 implement all UI elements from tamagUI
 replace all colors and delete colors file
+handle activity-indicator
+handle keyboardAvoidingView inside screenCOntainer and main-screen
 delete tasks file
 create testing for the app

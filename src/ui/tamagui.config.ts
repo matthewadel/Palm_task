@@ -17,6 +17,7 @@ const shorthands = {
   bblr: 'borderBottomLeftRadius',
   bbrr: 'borderBottomRightRadius',
   bw: 'borderWidth',
+  bc: 'borderColor',
   bg: 'backgroundColor',
   br: 'borderRadius',
   btlr: 'borderTopLeftRadius',

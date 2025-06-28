@@ -2,9 +2,10 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { s, vs } from 'react-native-size-matters';
+import { YStack } from 'tamagui';
 
 import { IScreenHeader } from '@/types';
-import { ICONS, Text, VectorIcons, View } from '@/ui';
+import { ICONS, Text, VectorIcons } from '@/ui';
 
 const ScreenHeader = (props: IScreenHeader) => {
   const Navigation = useNavigation();
@@ -13,7 +14,7 @@ const ScreenHeader = (props: IScreenHeader) => {
   const canGoBack = Navigation.canGoBack();
 
   return (
-    <View style={styles.container}>
+    <YStack style={styles.container}>
       {!!canGoBack && (
         <VectorIcons
           icon={ICONS.MaterialCommunityIcons}
@@ -24,7 +25,7 @@ const ScreenHeader = (props: IScreenHeader) => {
         />
       )}
       <Text style={styles.headerTextStyle}>{props.title}</Text>
-    </View>
+    </YStack>
   );
 };
 

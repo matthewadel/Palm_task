@@ -7,10 +7,10 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { s } from 'react-native-size-matters';
+import { YStack } from 'tamagui';
 
 import { IScreenContainer } from '@/types';
-import { COLORS, ScreenHeader, View } from '@/ui';
+import { COLORS, ScreenHeader } from '@/ui';
 
 const ScreenContainer = (props: IScreenContainer) => {
   return (
@@ -21,9 +21,9 @@ const ScreenContainer = (props: IScreenContainer) => {
         behavior={Platform.OS === 'android' ? undefined : 'padding'}
       >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-          <View style={{ ...styles.containerStyle, ...props.style }}>
+          <YStack f={1} w={'100%'} px="$lg">
             {props.children}
-          </View>
+          </YStack>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
     </SafeAreaView>
@@ -34,11 +34,6 @@ export { ScreenContainer };
 
 const styles = StyleSheet.create({
   safeArea: { height: '100%', backgroundColor: COLORS.White, width: '100%' },
-  containerStyle: {
-    flex: 1,
-    width: '100%',
-    paddingHorizontal: s(15),
-  },
   keyboardAvoidingView: {
     flex: 1,
     width: '100%',

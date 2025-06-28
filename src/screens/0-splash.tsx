@@ -2,9 +2,10 @@ import { CommonActions, useNavigation } from '@react-navigation/native';
 import React, { useEffect, useRef } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import { s } from 'react-native-size-matters';
+import { YStack } from 'tamagui';
 
 import { logo } from '@/assets';
-import { COLORS, View } from '@/ui';
+import { COLORS } from '@/ui';
 
 const Splash = () => {
   const navigation = useNavigation();
@@ -36,7 +37,7 @@ const Splash = () => {
   }, [fadeAnim, navigation]);
 
   return (
-    <View style={styles.container}>
+    <YStack f={1} bg="$Primary" jc="center" ai="center">
       <Animated.Image
         source={logo}
         style={[
@@ -55,7 +56,7 @@ const Splash = () => {
         ]}
         resizeMode="contain"
       />
-    </View>
+    </YStack>
   );
 };
 
