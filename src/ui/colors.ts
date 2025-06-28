@@ -5,6 +5,7 @@ export const COLORS: Record<string, string> = {
   Red: '#FF0000',
   Error: '#FF6767',
   Green: '#00FF00',
+  Orange: '#FFAA71',
   PlaceholderTextColor: '#A7A7A7',
   BorderColor: '#909090',
 };

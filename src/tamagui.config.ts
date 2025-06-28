@@ -39,6 +39,7 @@ export const config = createTamagui({
       Red: '#FF0000',
       Error: '#FF6767',
       Green: '#00FF00',
+      Orange: '#FFAA71',
       PlaceholderTextColor: '#A7A7A7',
       Secondary: '#A7A7A7',
       BorderColor: '#A7A7A7',

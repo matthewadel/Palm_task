@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
-import { Alert } from 'react-native';
+import React, { useRef, useState } from 'react';
+import { StyleSheet } from 'react-native';
 import { Button, YStack } from 'tamagui';
 
 import { Mood, Notes, SleepHours } from '@/components';
 import { ScreenContainer } from '@/ui';
+import SuccessMessage, { SuccessMessageRef } from '@/ui/success-message';
 
 export const MainScreen = () => {
   const [mood, setMood] = useState('happy');
   const [sleep, setSleep] = useState(5);
   const [notes, setNotes] = useState('');
 
+  const successRef = useRef<SuccessMessageRef>(null);
+
   const handleSubmit = () => {
     // handle submit logic here
-    Alert.alert(`Mood: ${mood}\nSleep: ${sleep}\nNotes: ${notes}`);
+    successRef.current?.show();
   };
 
   return (
@@ -32,10 +35,21 @@ export const MainScreen = () => {
           br={10}
           onPress={handleSubmit}
           fontWeight={'700'}
+          disabled={true}
+          disabledStyle={styles.disableButtonStyle}
         >
           Submit
         </Button>
+
+        <SuccessMessage
+          ref={successRef}
+          message="Success! Try meditating for 10 minutes today"
+        />
       </YStack>
     </ScreenContainer>
   );
 };
+
+const styles = StyleSheet.create({
+  disableButtonStyle: { opacity: 0.5 },
+});
