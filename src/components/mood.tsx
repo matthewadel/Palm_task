@@ -28,7 +28,7 @@ const moods = [
 ];
 
 const MoodButton = styled(Button, {
-  width: '100%',
+  w: '100%',
   height: '100%',
   br: s(20),
   borderTopWidth: 2,
@@ -79,7 +79,7 @@ export const Mood = ({
   };
 
   return (
-    <YStack width="100%" jc="flex-start" ai="flex-start" space="$md">
+    <YStack w="100%" jc="flex-start" ai="flex-start" space="$md">
       <Text
         fontWeight={'700'}
         fontSize={s(20)}
@@ -89,13 +89,13 @@ export const Mood = ({
         Mood
       </Text>
 
-      <XStack space="$lg" jc="space-between" width="100%" ai="center">
+      <XStack space="$lg" jc="space-between" w="100%" ai="center">
         {moods.map((mood, idx) => {
           const isSelected = value === mood.value;
 
           return (
-            <YStack width="25%" space="$sm" ai={'center'}>
-              <YStack key={mood.value} ai="center" width="100%" aspectRatio={1}>
+            <YStack w="25%" space="$sm" ai={'center'}>
+              <YStack key={mood.value} ai="center" w="100%" aspectRatio={1}>
                 <Animated.View
                   style={[styles.buttonContainerStyle, animatedStyles[idx]]}
                 >

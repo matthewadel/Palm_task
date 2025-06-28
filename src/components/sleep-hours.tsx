@@ -24,11 +24,11 @@ export const SleepHours = ({
   onChange: (v: number) => void;
 }) => {
   return (
-    <YStack width={'100%'} mt={'$xl'} space="$md">
+    <YStack w={'100%'} mt={'$xl'} space="$md">
       <Text fontWeight={'700'} fontSize={s(20)}>
         Sleep
       </Text>
-      <YStack width={'100%'}>
+      <YStack w={'100%'}>
         <Slider
           minimumValue={sliderProps.minimumValue}
           maximumValue={sliderProps.maximumValue}
@@ -41,7 +41,7 @@ export const SleepHours = ({
           style={styles.sliderStyle}
         />
         <XStack
-          width={'100%'}
+          w={'100%'}
           mt={'$sm'}
           jc="space-between"
           ai="center"
