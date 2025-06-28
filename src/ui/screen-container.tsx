@@ -3,6 +3,7 @@ import {
   Keyboard,
   KeyboardAvoidingView,
   Platform,
+  ScrollView,
   StyleSheet,
   TouchableWithoutFeedback,
 } from 'react-native';
@@ -20,11 +21,16 @@ const ScreenContainer = (props: IScreenContainer) => {
         style={styles.keyboardAvoidingView}
         behavior={Platform.OS === 'android' ? undefined : 'padding'}
       >
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-          <YStack f={1} w={'100%'} px="$lg">
-            {props.children}
-          </YStack>
-        </TouchableWithoutFeedback>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          alwaysBounceVertical={false}
+        >
+          <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <YStack f={1} w={'100%'} px="$lg">
+              {props.children}
+            </YStack>
+          </TouchableWithoutFeedback>
+        </ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>
   );

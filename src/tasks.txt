@@ -1,4 +1,0 @@
-handle keyboardAvoidingView inside screenCOntainer and main-screen
-delete tasks file
-create testing for the app
-create readme file for animation, absolute imports and backend implementation
