@@ -1,4 +1,4 @@
-package com.interactive_health_insight
+package com.miso.interactive_health_insight
 
 import android.app.Application
 import com.facebook.react.PackageList

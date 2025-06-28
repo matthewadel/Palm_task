@@ -77,9 +77,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.interactive_health_insight"
+    namespace "com.miso.interactive_health_insight"
     defaultConfig {
-        applicationId "com.interactive_health_insight"
+        applicationId "com.miso.interactive_health_insight"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
