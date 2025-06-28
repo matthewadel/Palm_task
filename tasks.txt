@@ -1,3 +1,5 @@
+draw the components
+implement all UI elements from tamagUI
+replace all colors and delete colors file
 delete tasks file
 create testing for the app
-implement all UI elements from tamagUI

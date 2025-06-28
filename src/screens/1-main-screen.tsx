@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Alert } from 'react-native';
 import { YStack } from 'tamagui';
 
+import { Mood } from '@/components';
 import { ScreenContainer } from '@/ui';
 
 export const MainScreen = () => {
@@ -18,8 +19,8 @@ export const MainScreen = () => {
     <ScreenContainer
       screenHeaderProps={{ title: 'How Are You Feeling Today?' }}
     >
-      <YStack f={1} jc="center" ai="center" p="$sm">
-        {/* <Mood value={mood} onChange={setMood} /> */}
+      <YStack f={1} jc="flex-start" ai="center" p="$sm">
+        <Mood value={mood} onChange={setMood} />
         {/* <SleepHours value={sleep} onChange={setSleep} /> */}
         {/* <Notes value={notes} onChange={setNotes} /> */}
         {/* <Button
