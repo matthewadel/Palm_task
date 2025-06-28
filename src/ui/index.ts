@@ -1,10 +1,10 @@
 export * from './activity-indicator';
 export * from './button';
 export * from './colors';
-export * from './constants';
 export * from './screen-container';
 export * from './screen-header';
 export * from './shadow-style';
+// export * from './tamagui.config';
 export * from './text';
 export * from './text-input';
 export * from './touchable-opacity';

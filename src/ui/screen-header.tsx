@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 import { s, vs } from 'react-native-size-matters';
 
 import { IScreenHeader } from '@/types';
-import { CONSTANTS, ICONS, Text, VectorIcons, View } from '@/ui';
+import { ICONS, Text, VectorIcons, View } from '@/ui';
 
 const ScreenHeader = (props: IScreenHeader) => {
   const Navigation = useNavigation();
@@ -36,8 +36,8 @@ const styles = StyleSheet.create({
     paddingVertical: vs(10),
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: CONSTANTS.PADDING_HORIZONTAL,
+    paddingHorizontal: s(15),
   },
   headerTextStyle: { fontWeight: 'bold', fontSize: s(20) },
-  backButtonStyle: { position: 'absolute', left: CONSTANTS.PADDING_HORIZONTAL },
+  backButtonStyle: { position: 'absolute', left: s(15) },
 });

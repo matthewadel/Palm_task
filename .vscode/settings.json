@@ -29,5 +29,8 @@
   "i18n-ally.disabled": false, // make sure to disable i18n-ally in your global setting and only enable it for such projects
   "[typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   } // make sure to disable i18n-ally in your global setting and only enable it for such projects
 }

@@ -7,9 +7,10 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { s } from 'react-native-size-matters';
 
 import { IScreenContainer } from '@/types';
-import { COLORS, CONSTANTS, ScreenHeader, View } from '@/ui';
+import { COLORS, ScreenHeader, View } from '@/ui';
 
 const ScreenContainer = (props: IScreenContainer) => {
   return (
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
   containerStyle: {
     flex: 1,
     width: '100%',
-    paddingHorizontal: CONSTANTS.PADDING_HORIZONTAL,
+    paddingHorizontal: s(15),
   },
   keyboardAvoidingView: {
     flex: 1,

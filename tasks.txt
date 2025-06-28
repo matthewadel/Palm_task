@@ -1,2 +1,3 @@
 delete tasks file
 create testing for the app
+implement all UI elements from tamagUI
