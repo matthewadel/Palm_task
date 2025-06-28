@@ -6,6 +6,7 @@ const shorthands = {
   ac: 'alignContent',
   ai: 'alignItems',
   jc: 'justifyContent',
+  mt: 'marginTop',
   p: 'padding',
   als: 'alignSelf',
   bblr: 'borderBottomLeftRadius',
@@ -22,9 +23,9 @@ export const config = createTamagui({
   ...defaultConfig,
   shorthands,
   tokens: {
-    size: { sm: s(8), true: s(10), md: s(12), lg: s(20) },
-    space: { sm: s(4), md: s(8), true: s(10), lg: s(12) },
-    radius: { sm: s(4), md: s(8), true: s(10), lg: s(12) },
+    size: { sm: s(8), true: s(10), md: s(12), lg: s(12), xl: s(16) },
+    space: { sm: s(4), md: s(8), true: s(10), lg: s(12), xl: s(16) },
+    radius: { sm: s(4), md: s(8), true: s(10), lg: s(12), xl: s(16) },
     color: {
       Primary: '#7652F1',
       White: '#FFFFFF',

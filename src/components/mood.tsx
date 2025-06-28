@@ -57,12 +57,10 @@ export const Mood = ({
   value: string;
   onChange: (v: string) => void;
 }) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const scaleAnims = moods.map(() => useSharedValue(1));
 
   const animatedStyles = [
     ...scaleAnims.map((shared, _) =>
-      // eslint-disable-next-line react-hooks/rules-of-hooks
       useAnimatedStyle(
         () => ({
           transform: [{ scale: shared.value }],
@@ -96,24 +94,19 @@ export const Mood = ({
           const isSelected = value === mood.value;
 
           return (
-            <YStack
-              key={mood.value}
-              ai="center"
-              space="$sm"
-              width="25%"
-              aspectRatio={1}
-            >
-              <Animated.View
-                style={[styles.buttonContainerStyle, animatedStyles[idx]]}
-              >
-                <MoodButton
-                  selected={isSelected}
-                  onPress={() => handlePress(mood.value, idx)}
+            <YStack width="25%" space="$sm" ai={'center'}>
+              <YStack key={mood.value} ai="center" width="100%" aspectRatio={1}>
+                <Animated.View
+                  style={[styles.buttonContainerStyle, animatedStyles[idx]]}
                 >
-                  <Text fontSize={s(40)}>{mood.emoji}</Text>
-                </MoodButton>
-              </Animated.View>
-
+                  <MoodButton
+                    selected={isSelected}
+                    onPress={() => handlePress(mood.value, idx)}
+                  >
+                    <Text fontSize={s(40)}>{mood.emoji}</Text>
+                  </MoodButton>
+                </Animated.View>
+              </YStack>
               <Text
                 fontSize={14}
                 fontWeight="600"

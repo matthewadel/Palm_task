@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Alert } from 'react-native';
 import { YStack } from 'tamagui';
 
-import { Mood } from '@/components';
+import { Mood, SleepHours } from '@/components';
 import { ScreenContainer } from '@/ui';
 
 export const MainScreen = () => {
   const [mood, setMood] = useState('happy');
-  const [sleep, setSleep] = useState(7);
+  const [sleep, setSleep] = useState(5);
   const [notes, setNotes] = useState('');
 
   const handleSubmit = () => {
@@ -21,7 +21,7 @@ export const MainScreen = () => {
     >
       <YStack f={1} jc="flex-start" ai="center" p="$sm">
         <Mood value={mood} onChange={setMood} />
-        {/* <SleepHours value={sleep} onChange={setSleep} /> */}
+        <SleepHours value={sleep} onChange={setSleep} />
         {/* <Notes value={notes} onChange={setNotes} /> */}
         {/* <Button
           mt="$6"
