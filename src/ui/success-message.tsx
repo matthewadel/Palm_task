@@ -6,7 +6,7 @@ import Animated, {
   withDelay,
   withTiming,
 } from 'react-native-reanimated';
-import { YStack } from 'tamagui';
+import { Text, YStack } from 'tamagui';
 
 export type SuccessMessageRef = {
   show: () => void;
@@ -50,9 +50,7 @@ const SuccessMessage = forwardRef(({ message }: Props, ref) => {
         shadowOpacity={0.15}
         shadowRadius={8}
       >
-        <Animated.Text style={styles.animatedMessageTextStyle}>
-          {message}
-        </Animated.Text>
+        <Text style={styles.animatedMessageTextStyle}>{message}</Text>
       </YStack>
     </Animated.View>
   );

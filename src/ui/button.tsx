@@ -1,13 +1,10 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import type { ButtonProps as TamaguiButtonProps } from 'tamagui';
 import { Button as TamaguiButton } from 'tamagui';
 
-interface CustomButtonProps extends TamaguiButtonProps {
-  type?: 'PRIMARY' | 'SECONDARY';
-}
+import { IButtonProps } from '@/types';
 
-const Button: React.FC<CustomButtonProps> = props => {
+const Button = (props: IButtonProps) => {
   const isSecondary = props?.type === 'SECONDARY';
   return (
     <TamaguiButton

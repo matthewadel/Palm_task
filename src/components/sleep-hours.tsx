@@ -4,6 +4,8 @@ import { StyleSheet } from 'react-native';
 import { s } from 'react-native-size-matters';
 import { styled, Text, XStack, YStack } from 'tamagui';
 
+import { Heading } from '@/ui';
+
 const StyledText = styled(Text, {
   fontSize: 15,
   color: '#888',
@@ -24,10 +26,9 @@ export const SleepHours = ({
   onChange: (v: number) => void;
 }) => {
   return (
-    <YStack w={'100%'} mt={'$xl'} space="$md">
-      <Text fontWeight={'700'} fontSize={s(20)}>
-        Sleep
-      </Text>
+    <YStack w={'100%'} mt={s(30)} space="$md">
+      <Heading>Sleep</Heading>
+
       <YStack w={'100%'}>
         <Slider
           minimumValue={sliderProps.minimumValue}
@@ -45,7 +46,7 @@ export const SleepHours = ({
           mt={'$sm'}
           jc="space-between"
           ai="center"
-          paddingLeft={4}
+          paddingLeft={7}
         >
           <StyledText>{sliderProps.minimumValue}</StyledText>
           <StyledText color={'$Primary'}>{value}</StyledText>
@@ -57,5 +58,8 @@ export const SleepHours = ({
 };
 
 const styles = StyleSheet.create({
-  sliderStyle: { width: '100%', height: 36 },
+  sliderStyle: {
+    width: '100%',
+    height: s(36),
+  },
 });

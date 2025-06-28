@@ -1,11 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { s, vs } from 'react-native-size-matters';
-import { YStack } from 'tamagui';
+import { s } from 'react-native-size-matters';
+import { XStack } from 'tamagui';
 
 import { IScreenHeader } from '@/types';
-import { ICONS, Text, VectorIcons } from '@/ui';
+import { Heading, ICONS, VectorIcons } from '@/ui';
 
 const ScreenHeader = (props: IScreenHeader) => {
   const Navigation = useNavigation();
@@ -14,31 +14,28 @@ const ScreenHeader = (props: IScreenHeader) => {
   const canGoBack = Navigation.canGoBack();
 
   return (
-    <YStack style={styles.container}>
-      {!!canGoBack && (
+    <XStack w={'100%'} py="$lg" px="$xl" jc="center" ai="center">
+      {!canGoBack && (
         <VectorIcons
           icon={ICONS.MaterialCommunityIcons}
           name="arrow-left"
-          size={s(30)}
+          size={s(20)}
           onPress={() => Navigation.goBack()}
           style={styles.backButtonStyle}
         />
       )}
-      <Text style={styles.headerTextStyle}>{props.title}</Text>
-    </YStack>
+      <Heading mb={0}>{props.title}</Heading>
+    </XStack>
   );
 };
 
 export { ScreenHeader };
 
 const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    paddingVertical: vs(10),
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: s(15),
+  backButtonStyle: {
+    position: 'absolute',
+    top: 'auto',
+    bottom: 'auto',
+    left: s(10),
   },
-  headerTextStyle: { fontWeight: 'bold', fontSize: s(20) },
-  backButtonStyle: { position: 'absolute', left: s(15) },
 });

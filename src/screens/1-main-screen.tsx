@@ -29,7 +29,7 @@ export const MainScreen = () => {
           type="PRIMARY"
           mt="$xl"
           w="100%"
-          height={55}
+          h={55}
           onPress={handleSubmit}
           disabled={!notes}
         >

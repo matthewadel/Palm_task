@@ -24,6 +24,7 @@ const shorthands = {
   w: 'width',
   btrr: 'borderTopRightRadius',
   f: 'flex',
+  h: 'height',
 } as const;
 
 export const config = createTamagui({

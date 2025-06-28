@@ -9,7 +9,7 @@ import Animated, {
 import { s } from 'react-native-size-matters';
 import { styled, Text, XStack, YStack } from 'tamagui';
 
-import { Button } from '@/ui';
+import { Button, Heading } from '@/ui';
 
 const moods = [
   {
@@ -31,12 +31,9 @@ const moods = [
 
 const MoodButton = styled(Button, {
   w: '100%',
-  height: '100%',
+  h: '100%',
   br: s(20),
-  borderTopWidth: 2,
-  borderRightWidth: 2,
-  borderBottomWidth: 2,
-  borderLeftWidth: 2,
+  bw: 2,
   bc: '$Primary',
   variants: {
     selected: {
@@ -47,7 +44,7 @@ const MoodButton = styled(Button, {
         bg: '$White',
       },
     },
-  } as const,
+  },
 });
 
 export const Mood = ({
@@ -80,14 +77,7 @@ export const Mood = ({
 
   return (
     <YStack w="100%" jc="flex-start" ai="flex-start" space="$md">
-      <Text
-        fontWeight={'700'}
-        fontSize={s(20)}
-        color="$Dark"
-        textAlign="center"
-      >
-        Mood
-      </Text>
+      <Heading>Mood</Heading>
 
       <XStack space="$lg" jc="space-between" w="100%" ai="center">
         {moods.map((mood, idx) => {
@@ -103,7 +93,7 @@ export const Mood = ({
                     selected={isSelected}
                     onPress={() => handlePress(mood.value, idx)}
                   >
-                    <Text fontSize={s(40)}>{mood.emoji}</Text>
+                    <Text fontSize={s(35)}>{mood.emoji}</Text>
                   </MoodButton>
                 </Animated.View>
               </YStack>

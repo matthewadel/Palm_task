@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { StyleSheet } from 'react-native';
+import { ActivityIndicator, StyleSheet } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
@@ -15,7 +15,6 @@ import Octicons from 'react-native-vector-icons/Octicons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
 import { IVectorIcons } from '@/types';
-import { ActivityIndicator } from '@/ui';
 
 export const ICONS = {
   AntDesign,
@@ -34,8 +33,7 @@ export const ICONS = {
 };
 
 export const VectorIcons = (props: IVectorIcons) => {
-  console.log('props.icon', props.icon);
-  let Icon = ICONS[props.icon as keyof typeof ICONS];
+  let Icon = props.icon;
 
   let [Width, setWidth] = useState(0);
   let [Height, setHeight] = useState(0);

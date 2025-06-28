@@ -1,5 +1,5 @@
-import { ITouchableOpacity } from './touchable-opacity';
+import type { ButtonProps as TamaguiButtonProps } from 'tamagui';
 
-export interface IButton extends ITouchableOpacity {
+export interface IButtonProps extends TamaguiButtonProps {
   type?: 'PRIMARY' | 'SECONDARY';
 }

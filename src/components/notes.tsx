@@ -1,6 +1,8 @@
 import React from 'react';
 import { s } from 'react-native-size-matters';
-import { Input, Text, YStack } from 'tamagui';
+import { YStack } from 'tamagui';
+
+import { Heading, TextInput } from '@/ui';
 
 export const Notes = ({
   value = '',
@@ -10,21 +12,13 @@ export const Notes = ({
   onChange: (v: string) => void;
 }) => {
   return (
-    <YStack w="100%" mt={'$lg'}>
-      <Text fontWeight="700" fontSize={18} mb="$lg">
-        Notes
-      </Text>
-      <Input
+    <YStack mt={s(30)} w="100%">
+      <Heading>Notes</Heading>
+      <TextInput
         multiline
         placeholder="Add any notes..."
         value={value}
         onChangeText={onChange}
-        w={'100%'}
-        height={s(100)}
-        textAlignVertical="top"
-        br={12}
-        px="$md"
-        fontSize={16}
       />
     </YStack>
   );

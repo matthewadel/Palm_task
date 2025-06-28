@@ -10,7 +10,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { YStack } from 'tamagui';
 
 import { IScreenContainer } from '@/types';
-import { COLORS, ScreenHeader } from '@/ui';
+import { ScreenHeader } from '@/ui';
 
 const ScreenContainer = (props: IScreenContainer) => {
   return (
@@ -33,7 +33,7 @@ const ScreenContainer = (props: IScreenContainer) => {
 export { ScreenContainer };
 
 const styles = StyleSheet.create({
-  safeArea: { height: '100%', backgroundColor: COLORS.White, width: '100%' },
+  safeArea: { height: '100%', backgroundColor: '#FFF', width: '100%' },
   keyboardAvoidingView: {
     flex: 1,
     width: '100%',
