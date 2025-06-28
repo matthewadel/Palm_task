@@ -1,7 +1,4 @@
-implement all UI elements from tamagUI
-replace all colors and delete colors file
-handle activity-indicator
 handle keyboardAvoidingView inside screenCOntainer and main-screen
-clean types folder
 delete tasks file
 create testing for the app
+create readme file for animation, absolute imports and backend implementation

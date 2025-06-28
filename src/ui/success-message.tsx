@@ -1,28 +1,44 @@
-import React, { forwardRef, useImperativeHandle } from 'react';
-import { StyleSheet } from 'react-native';
+import React, { forwardRef, useImperativeHandle, useState } from 'react';
+import { OpaqueColorValue, StyleSheet } from 'react-native';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withDelay,
   withTiming,
 } from 'react-native-reanimated';
-import { Text, YStack } from 'tamagui';
+import { GetThemeValueForKey, Text, YStack } from 'tamagui';
 
 export type SuccessMessageRef = {
-  show: () => void;
+  show: (
+    inputMessage: string,
+    inputBackgroundColor:
+      | GetThemeValueForKey<'backgroundColor'>
+      | OpaqueColorValue
+      | null
+      | undefined,
+  ) => void;
 };
 
-type Props = {
-  message: string;
-};
-
-const SuccessMessage = forwardRef(({ message }: Props, ref) => {
+const SuccessMessage = forwardRef((_, ref) => {
   const opacity = useSharedValue(0);
+  const [message, setMessage] = useState('');
+  const [backgroundColor, setBackgroundColor] = useState<
+    GetThemeValueForKey<'backgroundColor'> | OpaqueColorValue | null | undefined
+  >('$Orange');
 
   useImperativeHandle(
     ref,
     () => ({
-      show: () => {
+      show: (
+        inputMessage: string,
+        inputBackgroundColor:
+          | GetThemeValueForKey<'backgroundColor'>
+          | OpaqueColorValue
+          | null
+          | undefined,
+      ) => {
+        setMessage(inputMessage);
+        setBackgroundColor(inputBackgroundColor);
         opacity.value = withTiming(1, { duration: 400 }, () => {
           opacity.value = withDelay(1000, withTiming(0, { duration: 400 }));
         });
@@ -42,7 +58,7 @@ const SuccessMessage = forwardRef(({ message }: Props, ref) => {
       pointerEvents="none"
     >
       <YStack
-        bg="$Orange"
+        bg={backgroundColor}
         px="$lg"
         py="$md"
         br={12}

@@ -14,7 +14,7 @@ const StyledText = styled(Text, {
 
 const sliderProps = {
   minimumValue: 0,
-  maximumValue: 10,
+  maximumValue: 12,
   step: 1,
 };
 

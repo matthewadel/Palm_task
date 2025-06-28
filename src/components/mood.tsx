@@ -9,25 +9,9 @@ import Animated, {
 import { s } from 'react-native-size-matters';
 import { styled, Text, XStack, YStack } from 'tamagui';
 
+import { IMood } from '@/types';
 import { Button, Heading } from '@/ui';
-
-const moods = [
-  {
-    value: 'happy',
-    label: 'Happy',
-    emoji: '😊',
-  },
-  {
-    value: 'neutral',
-    label: 'Neutral',
-    emoji: '😐',
-  },
-  {
-    value: 'sad',
-    label: 'Sad',
-    emoji: '😢',
-  },
-];
+// Simple loader component
 
 const MoodButton = styled(Button, {
   w: '100%',
@@ -48,14 +32,15 @@ const MoodButton = styled(Button, {
 });
 
 export const Mood = ({
+  moods,
   value,
   onChange,
 }: {
-  value: string;
-  onChange: (v: string) => void;
+  moods: IMood[];
+  value: number;
+  onChange: (v: number) => void;
 }) => {
-  const scaleAnims = moods.map(() => useSharedValue(1));
-
+  const scaleAnims = moods?.map(() => useSharedValue(1));
   const animatedStyles = [
     ...scaleAnims.map((shared, _) =>
       useAnimatedStyle(
@@ -67,7 +52,7 @@ export const Mood = ({
     ),
   ];
 
-  const handlePress = (moodValue: string, idx: number) => {
+  const handlePress = (moodValue: number, idx: number) => {
     scaleAnims[idx].value = withSequence(
       withTiming(1.15, { duration: 120 }),
       withTiming(1, { duration: 120 }),
@@ -80,8 +65,8 @@ export const Mood = ({
       <Heading>Mood</Heading>
 
       <XStack space="$lg" jc="space-between" w="100%" ai="center">
-        {moods.map((mood, idx) => {
-          const isSelected = value === mood.value;
+        {moods?.map((mood, idx) => {
+          const isSelected = value === mood.id;
 
           return (
             <YStack w="25%" space="$sm" ai={'center'}>
@@ -91,7 +76,7 @@ export const Mood = ({
                 >
                   <MoodButton
                     selected={isSelected}
-                    onPress={() => handlePress(mood.value, idx)}
+                    onPress={() => handlePress(mood.id, idx)}
                   >
                     <Text fontSize={s(35)}>{mood.emoji}</Text>
                   </MoodButton>
