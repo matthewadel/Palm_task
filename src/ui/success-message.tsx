@@ -40,7 +40,7 @@ const SuccessMessage = forwardRef((_, ref) => {
         setMessage(inputMessage);
         setBackgroundColor(inputBackgroundColor);
         opacity.value = withTiming(1, { duration: 400 }, () => {
-          opacity.value = withDelay(1000, withTiming(0, { duration: 400 }));
+          opacity.value = withDelay(4000, withTiming(0, { duration: 400 }));
         });
       },
     }),

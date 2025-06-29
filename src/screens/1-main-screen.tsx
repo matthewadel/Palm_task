@@ -22,11 +22,7 @@ export const MainScreen = () => {
   const successRef = useRef<SuccessMessageRef>(null);
 
   useEffect(() => {
-    if (result)
-      successRef.current?.show(
-        'Success! Try meditating for 10 minutes today',
-        '$Orange',
-      );
+    if (result) successRef.current?.show(result.message, '$Orange');
   }, [result]);
 
   useEffect(() => {

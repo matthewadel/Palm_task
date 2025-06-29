@@ -39,7 +39,7 @@ export function useHandleInsights() {
 
   return {
     handleInsights,
-    result,
+    result: result?.data,
     error,
     loading,
   };
