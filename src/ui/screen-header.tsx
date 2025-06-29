@@ -15,7 +15,7 @@ const ScreenHeader = (props: IScreenHeader) => {
 
   return (
     <XStack w={'100%'} py="$lg" px="$xl" jc="center" ai="center">
-      {!canGoBack && (
+      {!!canGoBack && (
         <VectorIcons
           icon={ICONS.MaterialCommunityIcons}
           name="arrow-left"
